@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="buscape">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buscapé</title>
+  <script src="./node_modules/angular/angular.min.js"></script>
+  <script src="./js/app.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <div class="complete" ng-controller="ItemsCtrl">
+    <p>Testezaum</p>
+
+    {{2+2}}
+    <div class="produto" ng-repeat="item in teste">
+      {{item.nome}}
+
+    </div>
+
+
+  </div>
+</body>
+</html>
