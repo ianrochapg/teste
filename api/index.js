@@ -1,7 +1,6 @@
 var express = require('express');
 
 var server = express();
-server.use(express.static(__dirname + '/public'));
 
 //libera acesso à API de qualquer host/cliente
 server.use(function(req, res, next) {
@@ -10,6 +9,7 @@ server.use(function(req, res, next) {
   next();
 });
 
+server.use(express.static(__dirname + '/public'));
 
 var port = 3000;
 server.listen(port, function() {

@@ -7,15 +7,77 @@
   <script src="./node_modules/angular/angular.min.js"></script>
   <script src="./js/app.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
   <div class="complete" ng-controller="ItemsCtrl">
-    <p>Testezaum</p>
+    <div class="barra">
+      <img class="busca" src="img/logobuscape.png" alt="">
+      <div class="dropdown">
+        <i class="fa fa-bars fa-3x"></i>
+        <div class="dropdown-content" ng-show="itemCarrinho">
+          <div class="itemCar" ng-repeat="produto in carrinho">
+            <div class="thumb">
+              <img ng-src="{{produto.product.images[0]}}">
+            </div>
+            <div class="dadosCar">
+              <p class="nomeB">{{produto.product.name}}</p>
+              <p class="bot1">{{produto.product.price.installments}}x R$ {{produto.product.price.installmentValue}}</p>
+              <p class="bot2">ou R$ {{produto.product.price.value}} à vista</p>
+            </div>
+            <div class="remove">
+              <button type="button" name="remover" ng-click="RemCarrinho(produto.product.id)">X</button>
 
-    {{2+2}}
-    <div class="produto" ng-repeat="item in teste">
-      {{item.nome}}
+            </div>
+
+          </div>
+          <div class="soma" ng-show="itemCarrinho">
+            <p>subtotal</p>
+            <hr>
+            <p>{{carrinho[0].product.price.installments}}x R$ {{somaParcelas}}</p>
+            <p>ou R$ {{somaTotal}} à vista</p>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="produto" ng-repeat="item in resposta">
+      <div class="galeria" align="center">
+        <div class="imgGaleria"><img ng-src="{{item.product.images[0]}}" ng-click="trocarImg(0)"><br></div>
+        <div class="imgGaleria"><img ng-src="{{item.product.images[1]}}" ng-click="trocarImg(1)"><br></div>
+        <div class="imgGaleria"><img ng-src="{{item.product.images[2]}}" ng-click="trocarImg(2)"><br></div>
+        <div class="imgGaleria"><img ng-src="{{item.product.images[3]}}" ng-click="trocarImg(3)"></div>
+
+      </div>
+      <div class="detalhes">
+        <div class="foto" align="center">
+          <img ng-src="{{item.product.images[selecionada]}}">
+
+        </div>
+        <div class="dados">
+          <div class="titulo">
+            <p>{{item.product.name}}</p>
+            <hr>
+          </div>
+          <div class="precos">
+            <div class="esquerda">
+              <p class="cta">{{item.product.price.installments}}x R$ {{item.product.price.installmentValue}}</p>
+              <p class="baixo"><span>ou </span>R$ {{item.product.price.value}} <span>à vista</span></p>
+
+            </div>
+            <div class="direita">
+              <button type="button" name="adicionar" ng-click="AddCarrinho(item.product.id)">Adicionar ao carrinho</button>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
 
     </div>
 
