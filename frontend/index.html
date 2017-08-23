@@ -28,34 +28,27 @@
             </div>
             <div class="remove">
               <button type="button" name="remover" ng-click="RemCarrinho(produto.product.id)">X</button>
-
             </div>
-
           </div>
           <div class="soma" ng-show="itemCarrinho">
             <p>subtotal</p>
             <hr>
             <p>{{carrinho[0].product.price.installments}}x R$ {{somaParcelas}}</p>
             <p>ou R$ {{somaTotal}} à vista</p>
-
           </div>
         </div>
       </div>
-
     </div>
-
     <div class="produto" ng-repeat="item in resposta">
       <div class="galeria" align="center">
         <div class="imgGaleria"><img ng-src="{{item.product.images[0]}}" ng-click="trocarImg(0)"><br></div>
         <div class="imgGaleria"><img ng-src="{{item.product.images[1]}}" ng-click="trocarImg(1)"><br></div>
         <div class="imgGaleria"><img ng-src="{{item.product.images[2]}}" ng-click="trocarImg(2)"><br></div>
         <div class="imgGaleria"><img ng-src="{{item.product.images[3]}}" ng-click="trocarImg(3)"></div>
-
       </div>
       <div class="detalhes">
         <div class="foto" align="center">
-          <img ng-src="{{item.product.images[selecionada]}}">
-
+          <img ng-src="{{item.product.images[imgSelecionada]}}">
         </div>
         <div class="dados">
           <div class="titulo">
@@ -66,22 +59,14 @@
             <div class="esquerda">
               <p class="cta">{{item.product.price.installments}}x R$ {{item.product.price.installmentValue}}</p>
               <p class="baixo"><span>ou </span>R$ {{item.product.price.value}} <span>à vista</span></p>
-
             </div>
             <div class="direita">
               <button type="button" name="adicionar" ng-click="AddCarrinho(item.product.id)">Adicionar ao carrinho</button>
-
             </div>
           </div>
-
         </div>
-
       </div>
-
-
     </div>
-
-
   </div>
 </body>
 </html>

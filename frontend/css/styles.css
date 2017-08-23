@@ -222,9 +222,13 @@ body{
 }
 
 @media (max-width: 678px) {
-  /*.galeria{
+  .galeria{
     display: none;
-  }*/
+  }
+
+  .produto{
+    padding: 0px 5%;
+  }
 
   .foto{
     width: 50%;
