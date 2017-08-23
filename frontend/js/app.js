@@ -13,7 +13,7 @@ app.controller('ItemsCtrl', function($scope, $http) {
   // ];
 
   $scope.resposta = [];
-  $http.get('https://localhost:3000/data.json').success(function(response){
+  $http.get('http://localhost:3000/data.json',function(response){
     $scope.resposta = response;
   });
 });
