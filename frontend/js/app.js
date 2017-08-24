@@ -49,4 +49,6 @@ app.controller('ItemsCtrl', function($scope, $http) {
     $scope.imgSelecionada = num;
   }
 
+  // um for pra varrer a lista, com a id, encontrar o produto e a posição, e alterar o no vetor. Criar um vetor só com as imagens iniciais.
+
 });

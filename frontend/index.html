@@ -40,20 +40,31 @@
       </div>
     </div>
     <div class="produto" ng-repeat="item in resposta">
-      <div class="galeria" align="center">
-        <div class="imgGaleria"><img ng-src="{{item.product.images[0]}}" ng-click="trocarImg(0)"><br></div>
+      <div class="fotos">
+        <div class="galeria" align="center">
+          <div class="imgGaleria" ng-repeat="imagem in item.product.images" align="center"><img ng-src="{{imagem}}" ng-click="trocarImg(imagem)"></div>
+        </div>
+
+        <!-- <div class="imgGaleria"><img ng-src="{{item.product.images[0]}}" ng-click="trocarImg(0)"><br></div>
         <div class="imgGaleria"><img ng-src="{{item.product.images[1]}}" ng-click="trocarImg(1)"><br></div>
         <div class="imgGaleria"><img ng-src="{{item.product.images[2]}}" ng-click="trocarImg(2)"><br></div>
-        <div class="imgGaleria"><img ng-src="{{item.product.images[3]}}" ng-click="trocarImg(3)"></div>
+        <div class="imgGaleria"><img ng-src="{{item.product.images[3]}}" ng-click="trocarImg(3)"></div> -->
+        <div class="foto" align="center">
+          <img ng-src="{{item.product.images[0]}}">
+        </div>
       </div>
       <div class="detalhes">
-        <div class="foto" align="center">
+        <!-- <div class="foto" align="center">
           <img ng-src="{{item.product.images[imgSelecionada]}}">
-        </div>
+        </div> -->
         <div class="dados">
           <div class="titulo">
-            <p>{{item.product.name}}</p>
+            <p>{{item.product.name}} <span><i class="fa fa-heart-o" aria-hidden="true"></i></span></p>
             <hr>
+          </div>
+          <div class="melhor">
+            <img ng-src="img/melhor.png">
+
           </div>
           <div class="precos">
             <div class="esquerda">

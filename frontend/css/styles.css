@@ -121,16 +121,22 @@ body{
   display: flex;
 }
 
-.galeria{
+.fotos{
   height: 100%;
-  width: 10%;
+  width: 50%;
   padding: 1%;
-  display: table-column;
+  display: flex;
+}
+
+.galeria{
+  width: 20%;
 }
 
 .imgGaleria{
+  width: 100%;
   height: 20%;
   border: 1px solid #4F4F4F;
+  margin: 10% 0px;
 }
 
 .imgGaleria img{
@@ -139,33 +145,33 @@ body{
 
 }
 
-.detalhes{
-  height: 100%;
-  width: 90%;
-  display: flex;
-}
-
 .foto{
   height: 100%;
-  width: 45%;
+  width: 80%;
 }
 
 .foto img{
   max-height: 100%;
-  max-width: 100%;
+  max-width: 90%;
   width: 100;
+}
+
+.detalhes{
+  height: 100%;
+  width: 50%;
+  display: flex;
 }
 
 .dados{
   height: 100%;
-  width: 55%;
+  width: 100%;
   padding: 0px 2%;
 }
 
 .titulo{
-  height: 45%;
+  height: 40%;
   width: 100%;
-  font-size: 20px;
+  font-size: 18px;
   color: #4F4F4F;
   position: relative;
 }
@@ -176,12 +182,25 @@ body{
   bottom: 0;
 }
 
+.titulo span{
+  color: #FFCD00;
+}
+
 .nomeB{
   color: white;
 }
 
+.melhor{
+  width: 100%;
+  height: 10%;
+}
+
+.melhor img{
+  height: 90%;
+}
+
 .precos{
-  height: 45%;
+  height: 40%;
   width: 100%;
   display: flex;
 }
@@ -221,21 +240,21 @@ body{
   color: white;
 }
 
-@media (max-width: 678px) {
+@media (max-width: 600px) {
+  .fotos{
+    width: 40%;
+  }
+
   .galeria{
     display: none;
   }
 
+  .foto{
+    width: 100%;
+  }
+
   .produto{
     padding: 0px 5%;
-  }
-
-  .foto{
-    width: 50%;
-  }
-
-  .dados{
-    width: 50%;
   }
 
   .titulo{
