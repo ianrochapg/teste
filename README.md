@@ -3,7 +3,7 @@
 ## Para rodar a API:
 
 * No terminal, ir até "api";
-* Inserir o comando "node index.js" (se não tiver o NodeJS instalado, inserir o comando "npm install -g nodejs" antes.
+* Inserir o comando "node index.js".
 
 ## Para abrir o projeto:
 
