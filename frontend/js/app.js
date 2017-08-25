@@ -18,36 +18,42 @@ app.controller('ItemsCtrl', function($scope, $http) {
   $scope.imgSelecionada = 0;
 
 
-  $scope.AddCarrinho = function(id){
-    for (var i = 0; i < $scope.resposta.length; i++) {
-      if($scope.resposta[i].product.id == id){
-        $scope.carrinho.push($scope.resposta[i]);
-        $scope.somaParcelas = Number($scope.somaParcelas) + Number($scope.carrinho[i].product.price.installmentValue);
-        $scope.somaTotal = Number($scope.somaTotal) + Number($scope.carrinho[i].product.price.value);
+  $scope.addCarrinho = function(product){
+        $scope.carrinho.push(product);
+        $scope.somaParcelas = Number($scope.somaParcelas) + Number(product.price.installmentValue);
+        $scope.somaTotal = Number($scope.somaTotal) + Number(product.price.value);
         $scope.itemCarrinho = true;
         console.log($scope.carrinho);
-      }
-    };
+
   };
 
-  $scope.RemCarrinho = function(id){
+  $scope.remCarrinho = function(id){
     for (var i = 0; i < $scope.carrinho.length; i++) {
-      if($scope.carrinho[i].product.id == id){
-        $scope.somaParcelas = Number($scope.somaParcelas) - Number($scope.carrinho[i].product.price.installmentValue);
-        $scope.somaTotal = Number($scope.somaTotal) - Number($scope.carrinho[i].product.price.value);
+      if($scope.carrinho[i].id == id){
+        $scope.somaParcelas = Number($scope.somaParcelas) - Number($scope.carrinho[i].price.installmentValue);
+        $scope.somaTotal = Number($scope.somaTotal) - Number($scope.carrinho[i].price.value);
         $scope.carrinho.splice(i, 1);
         console.log($scope.carrinho);
       }
 
       if($scope.carrinho == ''){
         $scope.itemCarrinho = false;
+        $scope.somaParcelas = 0;
+        $scope.somaTotal = 0;
+
       }
     }
   };
 
-  $scope.trocarImg = function(num){
-    $scope.imgSelecionada = num;
-  }
+  $scope.trocarImg = function(atual, total){
+    atual++;
+
+    if(atual > total){
+      return 0;
+    }
+
+    return atual;
+  };
 
   // um for pra varrer a lista, com a id, encontrar o produto e a posição, e alterar o no vetor. Criar um vetor só com as imagens iniciais.
 
